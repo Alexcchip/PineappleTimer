@@ -1,0 +1,9 @@
+import pandas as pd 
+countries = pd.read_html('https://en.wikipedia.org/wiki/Islam_by_country')
+v = countries[3]["Country/Region"]
+country_list = list(v) # create list  
+percentage = countries[3]["Muslim percentage of total population"]
+percentage_list = list(percentage)
+# combine the two for a dictionary 
+countries_islamPercent = dict(zip(country_list, percentage_list))
+print(countries_islamPercent)
